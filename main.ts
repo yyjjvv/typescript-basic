@@ -51,7 +51,6 @@ const stock2: { [id: string]: number } = {
 const cart2: string[] = [];
 
 function addToCart(id: string, quantity: number = 1): boolean {
-    
     if (stock2[id] < quantity) {
         return false;
     }
@@ -66,3 +65,26 @@ function addToCart(id: string, quantity: number = 1): boolean {
 // 값을 리턴하지 않는 함수는 void를 반환
 // Rest 파라미터는 배열 타입
 // (...ids: string[]) => void;
+
+///////////// interface 함수 적용 ////////////////
+interface Product {
+    id: string;
+    name: string;
+    price: number;
+    membersOnly?: boolean; // 있을 수도 없을 수도
+}
+
+let product4 = {
+    id: "c001",
+    name: "코드잇 블랙 후디",
+    price: 129000,
+    membersOnly: true,
+};
+
+interface PrintProductFC {
+    (product: Product): void;
+}
+
+const printproduct: PrintProductFC = (product) => {
+    console.log(`${product.name}의 가격은 ${product.price}원입니다.`);
+};
