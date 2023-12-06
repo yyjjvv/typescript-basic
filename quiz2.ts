@@ -1,7 +1,7 @@
-const current: [number, number] = [0, 0];
-const target: [number, number] = [4, 5];
-const dx: number = target[0] - current[0];
-const dy: number = target[1] - current[1];
+const current2: [number, number] = [0, 0];
+const target2: [number, number] = [4, 5];
+const dx: number = target2[0] - current2[0];
+const dy: number = target2[1] - current2[1];
 console.log(`오른쪽으로 ${dx} 위쪽으로 ${dy} 만큼 이동!`);
 
 const items: string[] = [];
