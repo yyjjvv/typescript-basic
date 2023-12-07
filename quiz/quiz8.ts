@@ -16,7 +16,7 @@ function printEquipment(equipment: Weapon | Armor) {
     console.log(`이름: ${equipment.name}`);
     if ("attack" in equipment) {
         // 무기인 경우 아래 코드를 실행합니다.
-        console.log(`이 장비는 공격력을 ${equipment.attack} 증가 시킵니다.`);
+        console.log(`이 장비는 공격력을 ${equipment.attack} 증가 g시킵니다.`);
     } else if ("defence" in equipment) {
         // 방어구인 경우 아래 코드를 실행합니다.
         console.log(`이 장비는 방어력을 ${equipment.defence} 증가 시킵니다.`);

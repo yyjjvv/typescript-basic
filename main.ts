@@ -1,3 +1,33 @@
+/**
+ * 리터럴 타입: 특정한 숫자나 문자열 같이 변수의 값을 타입으로 하는 타입. (각 리터럴 타입들은 string이나 number 같은 더 큰 타입에 포함)
+ * const name = 'codeit'; // 'codeit' 이라는 리터럴 타입
+ * const rank = 1; // 1 이라는 리터럴 타입
+ */
+
+/**
+ * 타입 별칭: 복잡한 타입에 이름을 붙이고 재사용하고 싶을 때 사용
+ * type Point = [number, number];
+ * type SearchQuery = string | string[];
+ * type Result = SuccessResult | FailedResult;
+ * type Coupon = PromotionCoupon | EmployeeCoupon | WelcomCoupon | RewardCoupon;  
+ */
+
+/**
+ * Union: A이거나 또는 B인 경우를 타입으로 만들고 싶을 때
+ */
+
+/**
+ * Intersection: A와 B의 성질을 모두 갖는 타입을 만들고 싶을 때
+ */
+
+/**
+ * keyof 연산자: 객체 타입에서 프로퍼티 이름들을 모아서 Union한 타입으로 만들고 싶을 때 사용
+ */
+
+/**
+ * typeof 연산자: 자바스크립트 코드에서 사용하면 결괏값이 문자열이지만, 타입스크립트 코드에서 쓸 때는 결과 값은 타입스크립트의 타입
+ */
+
 // 배열의 배열 표기
 const cart: string[][] = [["c001", "c002"], ["c003"]];
 
@@ -88,39 +118,3 @@ interface PrintProductFC {
 const printproduct: PrintProductFC = (product) => {
     console.log(`${product.name}의 가격은 ${product.price}원입니다.`);
 };
-
-///////////// Union & in //////////////
-// enum ClothingSize {
-//     S = "S",
-//     M = "M",
-//     L = "L",
-//     XL = "XL",
-// }
-type ClothingSize = "S" | "M" | "L" | "XL"; // enum, type 둘 다 가능
-interface ClothingProduct extends Product {
-    sizes: ClothingSize[];
-    color: string;
-}
-
-type ShoeSize = 220 | 225 | 230 | 235 | 240 | 245 | 250;
-interface ShoeProduct extends Product {
-    sizes: ShoeSize[];
-    handmade: boolean;
-}
-
-function printSizes(product: ClothingProduct | ShoeProduct) {
-    const availableSizes = product.sizes.join(", ");
-    console.log(`구매 가능한 사이즈는 다음과 같습니다: ${availableSizes}`);
-
-    if ("color" in product) {
-        console.log(`색상: ${product.color}`);
-    }
-
-    if ("handmade" in product) {
-        console.log(
-            product.handmade
-                ? "이 상품은 장인이 만들었습니다."
-                : "이 상품은 공장에서 만들어졌습니다."
-        );
-    }
-}

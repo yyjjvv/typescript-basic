@@ -1,4 +1,4 @@
-function getDiff(fromPoint: [number, number], toPoint: [number, number]): [number, number] {
+function getDiff2(fromPoint: [number, number], toPoint: [number, number]): [number, number] {
     let dx = toPoint[0] - fromPoint[0];
     let dy = toPoint[1] - fromPoint[1];
     return [dx, dy];
@@ -15,7 +15,7 @@ const monster: {
     level: 22,
     skills: ["태권도", "특공무술"],
     move(fromPoint, toPoint) {
-        let [dx, dy] = getDiff(fromPoint, toPoint);
+        let [dx, dy] = getDiff2(fromPoint, toPoint);
         console.log(`오른쪽으로 ${dx} 위쪽으로 ${dy} 만큼 이동!`);
     },
 };

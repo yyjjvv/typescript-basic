@@ -1,12 +1,12 @@
 type Point = [number, number];
 
-interface Entity {
+interface Entity2 {
     id: string;
     createdAt: Date;
     updatedAt: Date;
 }
 
-interface Monster extends Entity {
+interface Monster2 extends Entity2 {
     name: string;
     level: number;
     hasGold?: boolean;
@@ -20,7 +20,7 @@ function getDiff(fromPoint: Point, toPoint: Point) {
     return [dx, dy];
 }
 
-const monster5: Monster = {
+const monster5: Monster2 = {
     id: "g001",
     name: "고블린",
     level: 22,
